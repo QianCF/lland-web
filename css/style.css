@@ -1,0 +1,69 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #c0c0ff;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+#game {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  cursor: pointer;
+}
+
+#score {
+  position: fixed;
+  top: 32px;
+  left: 16px;
+  z-index: 2;
+  font-family: "Roboto", "Segoe UI", sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: #aaaaaa;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 8px 16px;
+  min-width: 48px;
+  text-align: center;
+  pointer-events: none;
+  transition: transform 1.5s cubic-bezier(0, 0, 0.2, 1), color 0.2s, background 0.2s;
+  transform: translateY(-500px);
+}
+
+#score.visible {
+  transform: translateY(0);
+}
+
+#score.game-over {
+  color: #ffffff;
+  background: #ff0000;
+}
+
+#loading {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #16161d;
+  color: #fff;
+  font-family: sans-serif;
+  z-index: 10;
+}
+
+#loading.hidden {
+  display: none;
+}
